@@ -30,7 +30,8 @@ export function AuthPage() {
   const goSettings = () => {
     // return console.log('🤑', accessStore.nowCode, accessStore.accessCode, accessStore, Path, storage, Locale, getClientConfig())
     if (accessStore.nowCode !== accessStore.accessCode) return;
-    navigate(Path.Chat)
+    // navigate(Path.Chat)
+    navigate(Path.Settings)
   };
   const goSaas = () => {
     trackAuthorizationPageButtonToCPaymentClick();

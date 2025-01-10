@@ -302,6 +302,7 @@ export function Select(
   >,
 ) {
   const { className, children, align, ...otherProps } = props;
+  console.log('👨‍🏫', children)
   return (
     <div
       className={clsx(
@@ -489,8 +490,8 @@ export function Selector<T>(props: {
     Array.isArray(props.defaultSelectedValue)
       ? props.defaultSelectedValue
       : props.defaultSelectedValue !== undefined
-      ? [props.defaultSelectedValue]
-      : [],
+        ? [props.defaultSelectedValue]
+        : [],
   );
 
   const handleSelection = (e: MouseEvent, value: T) => {

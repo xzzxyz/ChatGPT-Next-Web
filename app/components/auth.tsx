@@ -27,7 +27,7 @@ export function AuthPage() {
   const accessStore = useAccessStore();
   const goHome = () => navigate(Path.Home);
   const goChat = () => {
-    return console.log('🤑', accessStore, Path, storage, Locale, navigate, useState(0), getClientConfig())
+    return console.log('🤑', accessStore, Path, storage, Locale, navigate, getClientConfig())
     navigate(Path.Chat)
   };
   const goSaas = () => {

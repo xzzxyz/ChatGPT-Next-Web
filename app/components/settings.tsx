@@ -580,7 +580,7 @@ function SyncItems() {
 
 export function Settings() {
   const navigate = useNavigate();
-  console.log('👨‍🦰', navigate)
+
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const config = useAppConfig();
   const updateConfig = config.update;
@@ -603,6 +603,8 @@ export function Settings() {
   }
 
   const accessStore = useAccessStore();
+  console.log('👨‍🦰', accessStore)
+
   const shouldHideBalanceQuery = useMemo(() => {
     const isOpenAiUrl = accessStore.openaiUrl.includes(OPENAI_BASE_URL);
 

@@ -27,7 +27,7 @@ export function AuthPage() {
   const accessStore = useAccessStore();
   const goHome = () => navigate(Path.Home);
   const goChat = () => {
-    return console.log('🤑', accessStore, Path, storage, Locale)
+    return console.log('🤑', accessStore, Path, storage, Locale, navigate, useState(), getClientConfig())
     navigate(Path.Chat)
   };
   const goSaas = () => {
@@ -135,15 +135,15 @@ function TopBanner() {
   const isMobile = useMobileScreen();
   useEffect(() => {
     // 检查 localStorage 中是否有标记
-    const bannerDismissed = storage.getItem("bannerDismissed");
+    // const bannerDismissed = storage.getItem("bannerDismissed");
     // 如果标记不存在，存储默认值并显示横幅
-    if (!bannerDismissed) {
-      storage.setItem("bannerDismissed", "false");
-      setIsVisible(true); // 显示横幅
-    } else if (bannerDismissed === "true") {
-      // 如果标记为 "true"，则隐藏横幅
-      setIsVisible(false);
-    }
+    // if (!bannerDismissed) {
+    //   storage.setItem("bannerDismissed", "false");
+    //   setIsVisible(true); // 显示横幅
+    // } else if (bannerDismissed === "true") {
+    // 如果标记为 "true"，则隐藏横幅
+    setIsVisible(false);
+    // }
   }, []);
 
   const handleMouseEnter = () => {

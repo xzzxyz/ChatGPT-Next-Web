@@ -302,7 +302,7 @@ export function Select(
   >,
 ) {
   const { className, children, align, ...otherProps } = props;
-  console.log('👨‍🏫', children)
+
   return (
     <div
       className={clsx(

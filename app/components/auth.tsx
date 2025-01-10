@@ -26,7 +26,10 @@ export function AuthPage() {
   const navigate = useNavigate();
   const accessStore = useAccessStore();
   const goHome = () => navigate(Path.Home);
-  const goChat = () => navigate(Path.Chat);
+  const goChat = () => {
+    return console.log('🤑', accessStore.googleApiKey)
+    navigate(Path.Chat)
+  };
   const goSaas = () => {
     trackAuthorizationPageButtonToCPaymentClick();
     window.location.href = SAAS_CHAT_URL;
@@ -115,12 +118,12 @@ export function AuthPage() {
           type="primary"
           onClick={goChat}
         />
-        <IconButton
+        {/* <IconButton
           text={Locale.Auth.SaasTips}
           onClick={() => {
             goSaas();
           }}
-        />
+        /> */}
       </div>
     </div>
   );

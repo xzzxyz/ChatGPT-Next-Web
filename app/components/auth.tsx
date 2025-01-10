@@ -27,7 +27,7 @@ export function AuthPage() {
   const accessStore = useAccessStore();
   const goHome = () => navigate(Path.Home);
   const goChat = () => {
-    return console.log('🤑', accessStore.googleApiKey)
+    return console.log('🤑', accessStore, Path, storage, Locale)
     navigate(Path.Chat)
   };
   const goSaas = () => {

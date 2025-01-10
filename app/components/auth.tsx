@@ -21,13 +21,13 @@ import {
 import clsx from "clsx";
 
 const storage = safeLocalStorage();
-let nowCode = "";
 export function AuthPage() {
   const navigate = useNavigate();
   const accessStore = useAccessStore();
+  accessStore.nowCode = "";
   const goHome = () => navigate(Path.Home);
   const goChat = () => {
-    return console.log('🤑', nowCode, accessStore.accessCode, accessStore, Path, storage, Locale, getClientConfig())
+    return console.log('🤑', accessStore.nowCode, accessStore.accessCode, accessStore, Path, storage, Locale, getClientConfig())
     navigate(Path.Chat)
   };
   const goSaas = () => {
@@ -71,14 +71,14 @@ export function AuthPage() {
         aria={Locale.Settings.ShowPassword}
         aria-label={Locale.Auth.Input}
         // value={accessStore.accessCode}
-        value={nowCode}
+        value={accessStore.nowCode}
         type="text"
         placeholder={Locale.Auth.Input}
         onChange={(e) => {
-          nowCode = e.currentTarget.value;
-          // accessStore.update(
-          //   (access) => (access.accessCode = e.currentTarget.value),
-          // );
+          accessStore.update(
+            // (access) => (access.accessCode = e.currentTarget.value),
+            (access) => (access.nowCode = e.currentTarget.value),
+          );
         }}
       />
 

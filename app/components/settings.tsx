@@ -603,7 +603,9 @@ export function Settings() {
   }
 
   const accessStore = useAccessStore();
-  console.log('👨‍🦰', accessStore)
+  if (accessStore.nowCode === accessStore.accessCode) {
+    accessStore.nowCode = ""
+  } else navigate(Path.Auth)
 
   const shouldHideBalanceQuery = useMemo(() => {
     const isOpenAiUrl = accessStore.openaiUrl.includes(OPENAI_BASE_URL);

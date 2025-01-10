@@ -97,7 +97,7 @@ import {
   showPrompt,
   showToast,
 } from "./ui-lib";
-console.log('😭', Modal)
+
 import { useNavigate } from "react-router-dom";
 import {
   CHAT_PAGE_SIZE,

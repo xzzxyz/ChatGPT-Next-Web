@@ -55,6 +55,7 @@ const DEFAULT_XAI_URL = isApp ? XAI_BASE_URL : ApiPath.XAI;
 const DEFAULT_CHATGLM_URL = isApp ? CHATGLM_BASE_URL : ApiPath.ChatGLM;
 
 const DEFAULT_ACCESS_STATE = {
+  nowCode: "",
   accessCode: "",
   useCustomConfig: false,
 

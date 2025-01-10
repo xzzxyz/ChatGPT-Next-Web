@@ -24,7 +24,7 @@ const storage = safeLocalStorage();
 export function AuthPage() {
   const navigate = useNavigate();
   const accessStore = useAccessStore();
-  accessStore.nowCode = "";
+
   const goHome = () => navigate(Path.Home);
   const goChat = () => {
     return console.log('🤑', accessStore.nowCode, accessStore.accessCode, accessStore, Path, storage, Locale, getClientConfig())

@@ -603,7 +603,8 @@ export function Settings() {
     console.log("[Update] remote version ", updateStore.remoteVersion);
     if (accessStore.nowCode !== accessStore.accessCode) {
       navigate(Path.Auth)
-    }  
+    }
+    accessStore.nowCode = ""
   }
 
 

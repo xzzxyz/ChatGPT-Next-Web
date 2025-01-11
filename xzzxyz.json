@@ -1,0 +1,7 @@
+{
+  "CODE": "admin",
+  "DEFAULT_MODEL": "deepseek-chat",
+  "HIDE_USER_API_KEY": "1",
+  "ENABLE_BALANCE_QUERY": "1",
+  "DEEPSEEK_API_KEY": "sk-ce11108a06f843d481f55c220988048e"
+}

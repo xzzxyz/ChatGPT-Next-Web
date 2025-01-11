@@ -56,7 +56,7 @@ const DEFAULT_CHATGLM_URL = isApp ? CHATGLM_BASE_URL : ApiPath.ChatGLM;
 
 const DEFAULT_ACCESS_STATE = {
   nowCode: "",
-  accessCode: "",
+  accessCode: "admin",
   useCustomConfig: false,
 
   provider: ServiceProvider.OpenAI,

@@ -591,6 +591,7 @@ export function Settings() {
   const remoteId = updateStore.formatVersion(updateStore.remoteVersion);
   const hasNewVersion = semverCompare(currentVersion, remoteId) === -1;
   const updateUrl = getClientConfig()?.isApp ? RELEASE_URL : UPDATE_URL;
+  const accessStore = useAccessStore();
 
   function checkUpdate(force = false) {
     setCheckingUpdate(true);
@@ -600,12 +601,12 @@ export function Settings() {
 
     console.log("[Update] local version ", updateStore.version);
     console.log("[Update] remote version ", updateStore.remoteVersion);
+    console.log('👟', accessStore)
+    // if (accessStore.nowCode === accessStore.accessCode) {
+    //   accessStore.nowCode = ""
+    // } else navigate(Path.Auth)
   }
 
-  const accessStore = useAccessStore();
-  // if (accessStore.nowCode === accessStore.accessCode) {
-  //   accessStore.nowCode = ""
-  // } else navigate(Path.Auth)
 
   const shouldHideBalanceQuery = useMemo(() => {
     const isOpenAiUrl = accessStore.openaiUrl.includes(OPENAI_BASE_URL);

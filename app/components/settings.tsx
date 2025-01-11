@@ -601,10 +601,9 @@ export function Settings() {
 
     console.log("[Update] local version ", updateStore.version);
     console.log("[Update] remote version ", updateStore.remoteVersion);
-    console.log('👟', accessStore)
-    // if (accessStore.nowCode === accessStore.accessCode) {
-    //   accessStore.nowCode = ""
-    // } else navigate(Path.Auth)
+    if (accessStore.nowCode !== accessStore.accessCode) {
+      navigate(Path.Auth)
+    }  
   }
 
 

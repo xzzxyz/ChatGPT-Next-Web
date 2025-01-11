@@ -579,7 +579,7 @@ export function ChatActions(props: {
         {props.hitBottom && (
           <ChatAction
             // onClick={props.showPromptModal}
-            onClick={navigate(Path.Auth)}
+            onClick={() => navigate(Path.Auth)}
             text={Locale.Chat.InputActions.Settings}
             icon={<SettingsIcon />}
           />

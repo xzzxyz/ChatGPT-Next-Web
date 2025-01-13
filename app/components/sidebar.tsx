@@ -31,6 +31,27 @@ import dynamic from "next/dynamic";
 import { showConfirm, Selector } from "./ui-lib";
 import clsx from "clsx";
 
+// 建站日期统计
+const siteDateStatistics = (startDate: Date) => {
+  const currentDate = new Date();
+  const differenceInTime = currentDate.getTime() - startDate.getTime();
+  const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+  const differenceInMonths = differenceInDays / 30;
+  const differenceInYears = differenceInMonths / 12;
+  let str = "本站已经苟活了 ";
+  if (differenceInYears >= 1) {
+    str += Math.floor(differenceInYears) + " 年 ";
+  }
+  if (differenceInMonths % 12 >= 1) {
+    str += Math.floor(differenceInMonths % 12) + " 月 ";
+  }
+  if (differenceInDays % 30 >= 1) {
+    str += Math.floor(differenceInDays % 30) + " 天";
+  }
+  return str;
+};
+
+
 const DISCOVERY = [
   { name: Locale.Plugin.Name, path: Path.Plugins },
   { name: "Stable Diffusion", path: Path.Sd },
@@ -187,6 +208,7 @@ export function SideBarHeader(props: {
             {title}
           </div>
           <div className={styles["sidebar-sub-title"]}>{subTitle}</div>
+          <div className={styles["sidebar-sub-title"]}>{siteDateStatistics(new Date('2024/4/26'))}</div>
         </div>
         <div className={clsx(styles["sidebar-logo"], "no-dark")}>{logo}</div>
       </div>

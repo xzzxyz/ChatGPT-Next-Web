@@ -40,7 +40,7 @@ const siteDateStatistics = (startDate: Date) => {
   const differenceInYears = differenceInMonths / 12;
   let str = "本站已经苟活了 ";
   if (differenceInYears >= 1) {
-    str += Math.floor(differenceInYears) + " 年 ";
+    str += Math.floor(differenceInYears) + " 年";
   }
   if (differenceInMonths % 12 >= 1) {
     str += Math.floor(differenceInMonths % 12) + " 个月";
